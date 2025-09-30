@@ -3,62 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vasile's Portfolio</title>
+  <title>Vasile's Professional Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <span class="logo">Vasile007</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#current">Current Work</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button class="dark-mode-btn" onclick="toggleDarkMode()">Dark Mode</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="hero">
     <h1>Hello, I'm Vasile 👋</h1>
     <p>Software Developer | Java, HTML, CSS, JS</p>
-    <button class="dark-mode-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
-  </header>
+  </section>
 
-  <!-- ABOUT ME -->
-  <section class="about">
+  <!-- ABOUT -->
+  <section id="about">
     <h2>About Me</h2>
-    <p>I am a passionate developer working on projects in Java, HTML, CSS, and JavaScript. I enjoy creating clean, responsive applications and learning new technologies.</p>
+    <p>I am a passionate developer creating clean, responsive applications. I enjoy learning new technologies and building projects that demonstrate my skills.</p>
   </section>
 
   <!-- SKILLS -->
-  <section class="skills">
+  <section id="skills">
     <h2>Skills</h2>
-    <ul>
-      <li>Java</li>
-      <li>HTML / CSS</li>
-      <li>JavaScript</li>
-      <li>Git / GitHub</li>
-    </ul>
+    <div class="skills-container">
+      <span class="skill">Java</span>
+      <span class="skill">HTML/CSS</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">Git / GitHub</span>
+    </div>
   </section>
 
   <!-- CURRENT WORK -->
-  <section class="current-work">
+  <section id="current">
     <h2>Currently Working On</h2>
-    <p>Java Person Parser – a Java program that parses structured personal data strings and displays them in a readable format in the console.</p>
+    <p>Java Person Parser – a Java program that parses structured personal data strings and displays them in a readable format.</p>
   </section>
 
   <!-- PROJECTS -->
-  <section class="projects">
+  <section id="projects">
     <h2>Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="images/java-parser.png" alt="Java Person Parser">
+    <div class="projects-container">
+      <div class="project-card">
+        <video src="videos/java-parser.mp4" autoplay muted loop playsinline></video>
         <h3>Java Person Parser</h3>
-        <p>A Java program parsing personal data strings and displaying results in console.</p>
+        <p>Parsing personal data strings and displaying results in console.</p>
         <a href="https://github.com/vasile007/Java-Person-Parser" target="_blank">View on GitHub</a>
       </div>
-      <div class="card">
-        <img src="images/proiect-html.png" alt="HTML/CSS Website">
+
+      <div class="project-card">
+        <video src="videos/proiect-html.mp4" autoplay muted loop playsinline></video>
         <h3>HTML/CSS Website</h3>
-        <p>Responsive and elegant website built with HTML and CSS.</p>
+        <p>Responsive website built with HTML and CSS.</p>
         <a href="https://vasile007.github.io/ProiectHTMLCSS/" target="_blank">View Project</a>
       </div>
-      <!-- Add more cards here -->
+      <!-- add more projects -->
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="contact">
+  <section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:bejan.vasi@yahoo.com">bejan.vasi@yahoo.com</a></p>
     <p>GitHub: <a href="https://github.com/vasile007" target="_blank">github.com/vasile007</a></p>
@@ -69,9 +85,18 @@
   </footer>
 
   <script>
+    // Dark Mode
     function toggleDarkMode() {
       document.body.classList.toggle('dark-mode');
     }
+
+    // Smooth Scroll
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e){
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
   </script>
 </body>
 </html>
