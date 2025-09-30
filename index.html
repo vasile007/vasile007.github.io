@@ -1,46 +1,47 @@
 
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vasile's  Portfolio</title>
+  <title>Vasile's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Hello, my name is Vasile 👋</h1>
-    <p>Aici găsești proiectele mele de pe GitHub</p>
+    <h1>Hello, I'm Vasile 👋</h1>
+    <p>Welcome to my portfolio</p>
+    <button class="dark-mode-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
   </header>
 
-  <main class="grid">
-    <!-- Card proiect -->
+  <main>
+    <!-- Example Card -->
     <div class="card">
-      <img src="images/proiect1.png" alt="Screenshot proiect 1">
-      <h2>Proiect 1</h2>
-      <p>Descriere scurtă (ex: site de prezentare HTML/CSS).</p>
-      <a href="https://vasile007.github.io/Java-Person-Parser/" target="_blank">Vezi proiect</a>
+      <img src="images/java-parser.png" alt="Java Person Parser">
+      <h2>Java Person Parser</h2>
+      <p>A Java program that parses personal data strings and displays them in the console.</p>
+      <a href="https://github.com/vasile007/Java-Person-Parser" target="_blank">View on GitHub</a>
     </div>
 
     <div class="card">
-      <img src="images/proiect2.png" alt="Screenshot proiect 2">
-      <h2>Proiect 2</h2>
-      <p>Descriere scurtă (ex: aplicație mică JS).</p>
-      <a href="https://vasile007.github.io/numele-proiectului2/" target="_blank">Vezi proiect</a>
+      <img src="images/proiect-html.png" alt="HTML CSS Project">
+      <h2>HTML/CSS Website</h2>
+      <p>A responsive and elegant website built with HTML and CSS.</p>
+      <a href="https://vasile007.github.io/ProiectHTMLCSS/" target="_blank">View Project</a>
     </div>
-    <!-- Adaugi mai multe carduri după nevoie -->
 
-    <div class="card">
-  <img src="images/java-parser.png" alt="Screenshot Java Person Parser">
-  <h2>Java Person Parser</h2>
-  <p>Un proiect Java care parsează informații despre persoane.</p>
-  <a href="https://vasile007.github.io/Java-Person-Parser/" target="_blank">Vezi proiect</a>
-</div>
-
+    <!-- Add more cards here -->
   </main>
 
   <footer>
-    <p>&copy; 2025 Vasile007 | Portofoliul meu</p>
+    &copy; 2025 Vasile007 | Email: bejan.vasi@yahoo.com
   </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 </body>
 </html>
