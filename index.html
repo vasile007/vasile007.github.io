@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vasile's Professional Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vasile | Software Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- NAVBAR -->
-  <nav id="navbar">
+  <nav class="navbar">
     <div class="nav-container">
       <span class="logo">Vasile007</span>
       <ul class="nav-links">
@@ -18,88 +18,125 @@
         <li><a href="#current">Current Work</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><button class="dark-mode-btn" onclick="toggleDarkMode()">Dark Mode</button></li>
       </ul>
+      <button class="dark-toggle" id="darkModeToggle">🌙</button>
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
-  <section id="hero">
-    <h1>Hello, I'm Vasile 👋</h1>
-    <p> Software Developer</p>
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <h1>Hello, I'm <span>Vasile</span> 👋</h1>
+    <p>I'm a <span class="typing"></span></p>
+    <a href="#projects" class="btn">View My Work</a>
   </section>
 
   <!-- ABOUT -->
-  <section id="about">
+  <section id="about" class="section">
     <h2>About Me</h2>
-    <p>I am a passionate developer creating clean, responsive applications. I enjoy learning new technologies and building projects that demonstrate my skills.</p>
+    <div class="about-content">
+      <img src="images/profile.jpg" alt="Vasile profile" class="profile-pic">
+      <p>
+        I’m a passionate developer who enjoys learning new technologies and building responsive, functional, and creative applications. 
+        My focus is on writing clean, maintainable code and continuously improving my technical skills.
+      </p>
+    </div>
   </section>
 
   <!-- SKILLS -->
-  <section id="skills">
+  <section id="skills" class="section">
     <h2>Skills</h2>
-    <div class="skills-container">
-      <span class="skill">Java</span>
-      <span class="skill">HTML/CSS</span>
-      <span class="skill">JavaScript</span>
-      <span class="skill">Linux</span>
-      <span class="skill">Python</span>
-      <span class="skill">Php</span>
-      <span class="skill">Swing</span>
+    <div class="skills-grid">
+      <div class="skill-card">💻 Java</div>
+      <div class="skill-card">🌐 HTML / CSS</div>
+      <div class="skill-card">⚡ JavaScript</div>
+      <div class="skill-card">🐍 Python</div>
+      <div class="skill-card">🐧 Linux</div>
+      <div class="skill-card">💾 PHP</div>
+      <div class="skill-card">🪟 Swing</div>
     </div>
   </section>
 
   <!-- CURRENT WORK -->
-  <section id="current">
+  <section id="current" class="section">
     <h2>Currently Working On</h2>
-    <p>Java Person Parser – a Java program that parses structured personal data strings and displays them in a readable format.</p>
+    <p>Building <strong>Java Person Parser</strong> — a Java program that parses structured personal data strings and displays them in a readable format.</p>
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects">
+  <section id="projects" class="section">
     <h2>Projects</h2>
     <div class="projects-container">
       <div class="project-card">
         <video src="videos/java-parser.mp4" autoplay muted loop playsinline></video>
         <h3>Java Person Parser</h3>
         <p>Parsing personal data strings and displaying results in console.</p>
-        <a href="https://github.com/vasile007/Java-Person-Parser" target="_blank">View on GitHub</a>
+        <a href="https://github.com/vasile007/Java-Person-Parser" target="_blank" class="btn">View on GitHub</a>
       </div>
-
       <div class="project-card">
         <video src="videos/proiect-html.mp4" autoplay muted loop playsinline></video>
         <h3>HTML/CSS Website</h3>
         <p>Responsive website built with HTML and CSS.</p>
-        <a href="https://vasile007.github.io/ProiectHTMLCSS/" target="_blank">View Project</a>
+        <a href="https://vasile007.github.io/ProiectHTMLCSS/" target="_blank" class="btn">View Project</a>
       </div>
-      <!-- add more projects -->
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
+  <section id="contact" class="section contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:bejan.vasi@yahoo.com">bejan.vasi@yahoo.com</a></p>
-    <p>GitHub: <a href="https://github.com/vasile007" target="_blank">github.com/vasile007</a></p>
+    <p>📧 <a href="mailto:bejan.vasi@yahoo.com">bejan.vasi@yahoo.com</a></p>
+    <p>🐙 <a href="https://github.com/vasile007" target="_blank">github.com/vasile007</a></p>
   </section>
 
   <footer>
-    &copy; 2025 Vasile007
+    &copy; 2025 Vasile007 | Made with ❤️ and clean code.
   </footer>
 
+  <!-- ===== SCRIPTS ===== -->
   <script>
-    // Dark Mode
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-    }
+    // Dark Mode Toggle
+    const toggle = document.getElementById('darkModeToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      toggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    });
 
     // Smooth Scroll
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', function(e){
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', e => {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
     });
+
+    // Typing Effect
+    const typingText = document.querySelector('.typing');
+    const roles = ["Software Developer", "Problem Solver", "Tech Enthusiast", "Creative Coder"];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let currentRole = '';
+    let isDeleting = false;
+
+    function typeEffect() {
+      currentRole = roles[roleIndex];
+      let displayed = currentRole.substring(0, charIndex);
+      typingText.textContent = displayed;
+
+      if (!isDeleting && charIndex < currentRole.length) {
+        charIndex++;
+        setTimeout(typeEffect, 120);
+      } else if (isDeleting && charIndex > 0) {
+        charIndex--;
+        setTimeout(typeEffect, 60);
+      } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) {
+          roleIndex = (roleIndex + 1) % roles.length;
+        }
+        setTimeout(typeEffect, 1000);
+      }
+    }
+    typeEffect();
   </script>
 </body>
 </html>
