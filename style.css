@@ -322,3 +322,15 @@ body.modal-open::before {
   z-index: 9998;
 }
 
+
+footer {
+  text-align: center;      
+  padding: 1.5rem 2rem;    
+  background: #111;        
+  color: #fff;             
+  position: relative;      
+  bottom: 0;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
