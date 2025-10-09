@@ -122,70 +122,80 @@
     </div>
   </div>
 
-  <!-- ===== SCRIPTS ===== -->
-  <script>
-    // Dark Mode
-    const toggle = document.getElementById('darkModeToggle');
-    toggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      toggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+ <script>
+  // Dark Mode
+  const toggle = document.getElementById('darkModeToggle');
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    toggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+  });
+
+  // Typing Effect
+  const typingText = document.querySelector('.typing');
+  const roles = ["Software Developer", "Problem Solver", "Tech Enthusiast", "Creative Coder"];
+  let i = 0, j = 0, del = false;
+  function typing() {
+    const role = roles[i];
+    typingText.textContent = role.slice(0, j);
+    if (!del && j < role.length) j++;
+    else if (del && j > 0) j--;
+    if (j === role.length) del = true;
+    if (j === 0 && del) { del = false; i = (i + 1) % roles.length; }
+    setTimeout(typing, del ? 70 : 120);
+  }
+  typing();
+
+  // Modal Carousel Logic
+  const modal = document.getElementById('previewModal');
+  const closeBtn = document.querySelector('.close-btn');
+  const carouselMedia = document.querySelector('.carousel-media');
+  const leftBtn = document.querySelector('.left');
+  const rightBtn = document.querySelector('.right');
+  let mediaList = [];
+  let currentIndex = 0;
+
+  document.querySelectorAll('.preview-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      mediaList = JSON.parse(btn.dataset.media);
+      currentIndex = 0;
+      openModal();
     });
+  });
 
-    // Typing Effect
-    const typingText = document.querySelector('.typing');
-    const roles = ["Software Developer", "Problem Solver", "Tech Enthusiast", "Creative Coder"];
-    let i = 0, j = 0, del = false;
-    function typing() {
-      const role = roles[i];
-      typingText.textContent = role.slice(0, j);
-      if (!del && j < role.length) j++;
-      else if (del && j > 0) j--;
-      if (j === role.length) del = true;
-      if (j === 0 && del) { del = false; i = (i + 1) % roles.length; }
-      setTimeout(typing, del ? 70 : 120);
-    }
-    typing();
+  function openModal() {
+    document.body.classList.add('modal-open'); // 🔹 adaugăm blur pe fundal
+    modal.style.display = 'flex';
+    setTimeout(() => modal.classList.add('show'), 10);
+    showMedia(currentIndex);
+  }
 
-    // Modal Carousel Logic
-    const modal = document.getElementById('previewModal');
-    const closeBtn = document.querySelector('.close-btn');
-    const carouselMedia = document.querySelector('.carousel-media');
-    const leftBtn = document.querySelector('.left');
-    const rightBtn = document.querySelector('.right');
-    let mediaList = [];
-    let currentIndex = 0;
-
-    document.querySelectorAll('.preview-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        mediaList = JSON.parse(btn.dataset.media);
-        currentIndex = 0;
-        openModal();
-      });
-    });
-
-    function openModal() {
-  document.body.classList.add('modal-open'); // 🔹 adaugăm blur pe fundal
-  modal.style.display = 'flex';
-  setTimeout(() => modal.classList.add('show'), 10);
-  showMedia(currentIndex);
-}
-
-closeBtn.onclick = () => {
-  modal.classList.remove('show');
-  document.body.classList.remove('modal-open'); // 🔹 eliminăm blur-ul
-  setTimeout(() => {
-    modal.style.display = 'none';
-    carouselMedia.innerHTML = '';
-  }, 300);
-};
-
-window.onclick = (e) => {
-  if (e.target === modal) {
+  closeBtn.onclick = () => {
     modal.classList.remove('show');
     document.body.classList.remove('modal-open'); // 🔹 eliminăm blur-ul
     setTimeout(() => {
       modal.style.display = 'none';
       carouselMedia.innerHTML = '';
     }, 300);
-  }
-};
+  };
+
+  window.onclick = (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('show');
+      document.body.classList.remove('modal-open'); // 🔹 eliminăm blur-ul
+      setTimeout(() => {
+        modal.style.display = 'none';
+        carouselMedia.innerHTML = '';
+      }, 300);
+    }
+  };
+
+  // ===== SCROLL NAVBAR =====
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
