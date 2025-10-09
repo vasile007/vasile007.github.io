@@ -42,7 +42,6 @@ body.dark {
 
 /* Logo */
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
 .logo {
   font-family: 'Pacifico', cursive; /* font de mână */
   font-size: 2.8rem; /* mai mare */
@@ -173,19 +172,24 @@ body.dark .navbar.scrolled {
 }
 
 .skill-card {
-  background: #00c6ff;
+  background: linear-gradient(135deg, #00c6ff, #007bff);
   color: #fff;
-  padding: 1rem;
-  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
   text-align: center;
   font-weight: 600;
-  transition: transform 0.2s;
-  cursor: default;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  cursor: pointer;
 }
 
 .skill-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+  background: linear-gradient(135deg, #00ffff, #0066ff);
 }
+
 
 /* ==================== PROJECTS ==================== */
 .projects-container {
