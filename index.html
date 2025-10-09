@@ -66,18 +66,29 @@
   <section id="projects" class="section">
     <h2>Projects</h2>
     <div class="projects-container">
+
+      <!-- PROJECT 1 -->
       <div class="project-card">
         <video src="videos/java-parser.mp4" autoplay muted loop playsinline></video>
         <h3>Java Person Parser</h3>
-        <p>Parsing personal data strings and displaying results in console.</p>
-        <a href="https://github.com/vasile007/Java-Person-Parser" target="_blank" class="btn">View on GitHub</a>
+        <p>Java program for parsing and displaying structured personal data.</p>
+        <div class="btn-group">
+          <button class="btn preview-btn" data-video="videos/java-parser.mp4">🎥 Preview</button>
+          <a href="https://github.com/vasile007/Java-Person-Parser" target="_blank" class="btn">GitHub</a>
+        </div>
       </div>
+
+      <!-- PROJECT 2 -->
       <div class="project-card">
         <video src="videos/proiect-html.mp4" autoplay muted loop playsinline></video>
         <h3>HTML/CSS Website</h3>
-        <p>Responsive website built with HTML and CSS.</p>
-        <a href="https://vasile007.github.io/ProiectHTMLCSS/" target="_blank" class="btn">View Project</a>
+        <p>Responsive and modern website using HTML and CSS.</p>
+        <div class="btn-group">
+          <button class="btn preview-btn" data-video="videos/proiect-html.mp4">🎥 Preview</button>
+          <a href="https://vasile007.github.io/ProiectHTMLCSS/" target="_blank" class="btn">Live</a>
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -92,6 +103,14 @@
     &copy; 2025 Vasile007 | Made with ❤️ and clean code.
   </footer>
 
+  <!-- VIDEO MODAL -->
+  <div class="modal" id="videoModal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <video id="modalVideo" controls autoplay></video>
+    </div>
+  </div>
+
   <!-- ===== SCRIPTS ===== -->
   <script>
     // Dark Mode Toggle
@@ -101,43 +120,47 @@
       toggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
     });
 
-    // Smooth Scroll
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-
     // Typing Effect
     const typingText = document.querySelector('.typing');
     const roles = ["Software Developer", "Problem Solver", "Tech Enthusiast", "Creative Coder"];
-    let roleIndex = 0;
-    let charIndex = 0;
-    let currentRole = '';
-    let isDeleting = false;
+    let roleIndex = 0, charIndex = 0, deleting = false;
 
-    function typeEffect() {
-      currentRole = roles[roleIndex];
-      let displayed = currentRole.substring(0, charIndex);
-      typingText.textContent = displayed;
-
-      if (!isDeleting && charIndex < currentRole.length) {
-        charIndex++;
-        setTimeout(typeEffect, 120);
-      } else if (isDeleting && charIndex > 0) {
-        charIndex--;
-        setTimeout(typeEffect, 60);
-      } else {
-        isDeleting = !isDeleting;
-        if (!isDeleting) {
-          roleIndex = (roleIndex + 1) % roles.length;
-        }
-        setTimeout(typeEffect, 1000);
-      }
+    function type() {
+      const current = roles[roleIndex];
+      typingText.textContent = current.slice(0, charIndex);
+      if (!deleting && charIndex < current.length) charIndex++;
+      else if (deleting && charIndex > 0) charIndex--;
+      if (charIndex === current.length) deleting = true;
+      if (charIndex === 0 && deleting) { deleting = false; roleIndex = (roleIndex + 1) % roles.length; }
+      setTimeout(type, deleting ? 60 : 120);
     }
-    typeEffect();
+    type();
+
+    // Video Modal
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const closeBtn = document.querySelector('.close-btn');
+
+    document.querySelectorAll('.preview-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        modalVideo.src = btn.dataset.video;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+      modalVideo.pause();
+    });
+
+    window.addEventListener('click', e => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        modalVideo.pause();
+      }
+    });
   </script>
 </body>
 </html>
+
 
