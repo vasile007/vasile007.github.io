@@ -268,3 +268,69 @@ body.dark footer { background: #1e1e1e; color: #aaa; }
   font-size: 1.8rem;
   cursor: pointer;
 }
+/* ===== MODAL CAROUSEL ===== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #111;
+  padding: 1rem;
+  border-radius: 12px;
+  max-width: 900px;
+  width: 90%;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px; right: 15px;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-media {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel .media {
+  width: 100%;
+  border-radius: 10px;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.nav-btn {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  font-size: 2rem;
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-btn.left { left: 10px; }
+.nav-btn.right { right: 10px; }
+.nav-btn:hover { background: rgba(255,255,255,0.5); }
+
