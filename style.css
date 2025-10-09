@@ -26,12 +26,15 @@ h1, h2, h3 {
 
 /* ===== NAVBAR ===== */
 .navbar {
-  position: sticky;
+  background: linear-gradient(90deg, #0d0d0d, #1a1a1a);
+  color: white;
+  position: fixed;
   top: 0;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 100%;
   z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
+
 
 .nav-container {
   display: flex;
