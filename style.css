@@ -334,3 +334,16 @@ footer {
   font-size: 0.9rem;
 }
 
+.section.contact {
+  text-align: center; /* centrează tot conținutul din secțiunea Contact */
+}
+
+.section.contact a {
+  color: #00c6ff;       /* opțional, pentru link-uri să iasă în evidență */
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.section.contact a:hover {
+  color: #0072ff;
+}
