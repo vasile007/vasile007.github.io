@@ -1,3 +1,4 @@
+
 /* ==================== GLOBAL STYLES ==================== */
 * {
   margin: 0;
@@ -19,12 +20,11 @@ body.dark {
 }
 
 /* ==================== NAVBAR ==================== */
-
 .navbar {
   position: sticky;
   top: 0;
   width: 100%;
-  background: #fff; /* light mode */
+  background: #fff;
   color: #111;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   z-index: 1000;
@@ -36,11 +36,9 @@ body.dark {
   margin: 0 auto;
   padding: 0.75rem 2rem;
   display: flex;
-  justify-content: space-between; /* logo stânga, link-uri dreapta */
+  justify-content: space-between;
   align-items: center;
 }
-
-/* Logo */
 
 .logo {
   font-family: 'Pacifico', cursive;
@@ -51,12 +49,10 @@ body.dark {
   -webkit-text-fill-color: transparent;
 }
 
-
-/* Link-uri */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 2rem; /* spațiu între link-uri */
+  gap: 2rem;
   align-items: center;
 }
 
@@ -74,7 +70,6 @@ body.dark {
   color: #fff;
 }
 
-/* Dark mode toggle */
 .dark-toggle {
   margin-left: 1rem;
   background: none;
@@ -84,7 +79,6 @@ body.dark {
   color: inherit;
 }
 
-/* Scroll effect */
 .navbar.scrolled {
   padding: 0.5rem 2rem;
   background: rgba(255,255,255,0.95);
@@ -101,9 +95,7 @@ body.dark .navbar.scrolled {
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-
 /* ==================== HERO ==================== */
-
 .hero {
   position: relative;
   height: 90vh;
@@ -117,7 +109,8 @@ body.dark .navbar.scrolled {
 
 #hero-canvas {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: 0;
@@ -126,8 +119,10 @@ body.dark .navbar.scrolled {
 .hero::before {
   content: "";
   position: absolute;
-  top: -50%; left: -50%;
-  width: 200%; height: 200%;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
   background: linear-gradient(45deg, #00c6ff, #0072ff, #00ffff, #0066ff);
   background-size: 400% 400%;
   animation: gradientMove 15s ease infinite;
@@ -185,7 +180,6 @@ body.dark .navbar.scrolled {
   box-shadow: 0 12px 35px rgba(0,198,255,0.5);
 }
 
-/* Poza în Hero */
 .hero-img {
   width: 320px;
   border-radius: 25px;
@@ -210,7 +204,6 @@ body.dark .navbar.scrolled {
   }
 }
 
-
 /* ==================== SECTIONS ==================== */
 .section {
   padding: 4rem 2rem;
@@ -226,13 +219,12 @@ body.dark .navbar.scrolled {
 
 .about-content {
   display: flex;
-  flex-direction: column; /* stacked text */
+  flex-direction: column;
   gap: 1rem;
-  align-items: center;   /* centru orizontal */
+  align-items: center;
   justify-content: center;
   text-align: center;
 }
-
 
 .about-content .profile-pic {
   width: 250px;
@@ -266,7 +258,6 @@ body.dark .navbar.scrolled {
   background: linear-gradient(135deg, #00ffff, #0066ff);
 }
 
-
 /* ==================== PROJECTS ==================== */
 .projects-container {
   display: grid;
@@ -275,7 +266,7 @@ body.dark .navbar.scrolled {
 }
 
 .project-card {
-  background: #f0f0f0; /* gri deschis pentru light mode */
+  background: #f0f0f0;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 12px rgba(0,0,0,0.1);
@@ -283,7 +274,7 @@ body.dark .navbar.scrolled {
 }
 
 body.dark .project-card {
-  background: #222; /* gri închis pentru dark mode */
+  background: #222;
   box-shadow: 0 2px 12px rgba(0,0,0,0.5);
 }
 
@@ -291,7 +282,6 @@ body.dark .project-card {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
-
 
 .project-card video,
 .project-card img {
@@ -322,8 +312,10 @@ body.dark .project-card {
 .modal {
   display: none;
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
   z-index: 9999;
@@ -352,7 +344,8 @@ body.dark .project-card {
 
 .modal .close-btn {
   position: absolute;
-  top: 10px; right: 15px;
+  top: 10px;
+  right: 15px;
   font-size: 2rem;
   color: #fff;
   cursor: pointer;
@@ -385,21 +378,22 @@ body.dark .project-card {
   user-select: none;
 }
 
-/* ===== BLUR FUNDAL MODAL ===== */
 body.modal-open::before {
   content: "";
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   backdrop-filter: blur(6px);
   background: rgba(0,0,0,0.4);
   z-index: 9998;
 }
-/* =====footer ===*/
 
+/* ==================== FOOTER ==================== */
 footer {
-  display: flex;            
-  justify-content: center;  
+  display: flex;
+  justify-content: center;
   text-align: center;
   padding: 1.5rem 2rem;
   background: #111;
@@ -407,13 +401,14 @@ footer {
   width: 100%;
   font-size: 0.9rem;
 }
-/* === CONTACT SECTION === */
+
+/* ==================== CONTACT ==================== */
 .section.contact {
-  display: flex;            
-  flex-direction: column;  
-  align-items: center;      
-  justify-content: center;  
-  text-align: center;       
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   width: 100%;
 }
 
@@ -442,5 +437,38 @@ footer {
 .contact-btn .icon {
   width: 24px;
   height: 24px;
+}
+
+.contact-btn.email {
+  background: linear-gradient(135deg, #EA4335, #D93025);
+  box-shadow: 0 4px 15px rgba(234, 67, 53, 0.4);
+}
+
+.contact-btn.email:hover {
+  background: linear-gradient(135deg, #FF5A47, #C5221F);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(234, 67, 53, 0.6);
+}
+
+.contact-btn.github {
+  background: linear-gradient(135deg, #24292e, #2f363d);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.contact-btn.github:hover {
+  background: linear-gradient(135deg, #2f363d, #24292e);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.contact-btn.linkedin {
+  background: linear-gradient(135deg, #0077B5, #00A0DC);
+  box-shadow: 0 4px 15px rgba(0, 119, 181, 0.4);
+}
+
+.contact-btn.linkedin:hover {
+  background: linear-gradient(135deg, #00A0DC, #0077B5);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 119, 181, 0.6);
 }
 
