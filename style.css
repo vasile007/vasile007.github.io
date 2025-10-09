@@ -171,17 +171,23 @@ body.dark .navbar.scrolled {
 }
 
 .project-card {
-  background: #fff;
+  background: #f0f0f0; /* gri deschis pentru light mode */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
+body.dark .project-card {
+  background: #222; /* gri închis pentru dark mode */
+  box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
+
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
+
 
 .project-card video,
 .project-card img {
