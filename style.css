@@ -24,14 +24,30 @@ h1, h2, h3 {
   text-align: center;
 }
 
-/* ===== NAVBAR ===== */
+
+/* Navbar inițial */
 .navbar {
   position: sticky;
   top: 0;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  background: #1e1e1e;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: #fff;
+  transition: all 0.3s ease; /* important pentru animație */
 }
+
+/* Navbar micșorat la scroll */
+.navbar.scrolled {
+  padding: 0.5rem 2rem;
+  background: rgba(30,30,30,0.95); /* mai opac */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
 
 
 .nav-container {
