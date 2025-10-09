@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,7 +74,10 @@
         <h3>Java Person Parser</h3>
         <p>Java program for parsing and displaying structured personal data.</p>
         <div class="btn-group">
-          <button class="btn preview-btn" data-video="videos/java-parser.mp4">🎥 Preview</button>
+          <button class="btn preview-btn" 
+                  data-media='["videos/java-parser.mp4","images/java-parser1.png","images/java-parser2.png"]'>
+            🎥 Preview
+          </button>
           <a href="https://github.com/vasile007/Java-Person-Parser" target="_blank" class="btn">GitHub</a>
         </div>
       </div>
@@ -84,7 +88,10 @@
         <h3>HTML/CSS Website</h3>
         <p>Responsive and modern website using HTML and CSS.</p>
         <div class="btn-group">
-          <button class="btn preview-btn" data-video="videos/proiect-html.mp4">🎥 Preview</button>
+          <button class="btn preview-btn" 
+                  data-media='["videos/proiect-html.mp4","images/proiect-html1.png","images/proiect-html2.png"]'>
+            🎥 Preview
+          </button>
           <a href="https://vasile007.github.io/ProiectHTMLCSS/" target="_blank" class="btn">Live</a>
         </div>
       </div>
@@ -103,17 +110,21 @@
     &copy; 2025 Vasile007 | Made with ❤️ and clean code.
   </footer>
 
-  <!-- VIDEO MODAL -->
-  <div class="modal" id="videoModal">
+  <!-- MODAL CAROUSEL -->
+  <div class="modal" id="previewModal">
     <div class="modal-content">
       <span class="close-btn">&times;</span>
-      <video id="modalVideo" controls autoplay></video>
+      <div class="carousel">
+        <button class="nav-btn left">&#10094;</button>
+        <div class="carousel-media"></div>
+        <button class="nav-btn right">&#10095;</button>
+      </div>
     </div>
   </div>
 
   <!-- ===== SCRIPTS ===== -->
   <script>
-    // Dark Mode Toggle
+    // Dark Mode
     const toggle = document.getElementById('darkModeToggle');
     toggle.addEventListener('click', () => {
       document.body.classList.toggle('dark');
@@ -123,44 +134,78 @@
     // Typing Effect
     const typingText = document.querySelector('.typing');
     const roles = ["Software Developer", "Problem Solver", "Tech Enthusiast", "Creative Coder"];
-    let roleIndex = 0, charIndex = 0, deleting = false;
-
-    function type() {
-      const current = roles[roleIndex];
-      typingText.textContent = current.slice(0, charIndex);
-      if (!deleting && charIndex < current.length) charIndex++;
-      else if (deleting && charIndex > 0) charIndex--;
-      if (charIndex === current.length) deleting = true;
-      if (charIndex === 0 && deleting) { deleting = false; roleIndex = (roleIndex + 1) % roles.length; }
-      setTimeout(type, deleting ? 60 : 120);
+    let i = 0, j = 0, del = false;
+    function typing() {
+      const role = roles[i];
+      typingText.textContent = role.slice(0, j);
+      if (!del && j < role.length) j++;
+      else if (del && j > 0) j--;
+      if (j === role.length) del = true;
+      if (j === 0 && del) { del = false; i = (i + 1) % roles.length; }
+      setTimeout(typing, del ? 70 : 120);
     }
-    type();
+    typing();
 
-    // Video Modal
-    const modal = document.getElementById('videoModal');
-    const modalVideo = document.getElementById('modalVideo');
+    // Modal Carousel Logic
+    const modal = document.getElementById('previewModal');
     const closeBtn = document.querySelector('.close-btn');
+    const carouselMedia = document.querySelector('.carousel-media');
+    const leftBtn = document.querySelector('.left');
+    const rightBtn = document.querySelector('.right');
+    let mediaList = [];
+    let currentIndex = 0;
 
     document.querySelectorAll('.preview-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        modal.style.display = 'flex';
-        modalVideo.src = btn.dataset.video;
+        mediaList = JSON.parse(btn.dataset.media);
+        currentIndex = 0;
+        openModal();
       });
     });
 
-    closeBtn.addEventListener('click', () => {
-      modal.style.display = 'none';
-      modalVideo.pause();
-    });
+    function openModal() {
+      modal.style.display = 'flex';
+      showMedia(currentIndex);
+    }
 
-    window.addEventListener('click', e => {
+    function showMedia(index) {
+      const mediaSrc = mediaList[index];
+      const ext = mediaSrc.split('.').pop();
+      carouselMedia.innerHTML = '';
+      if (ext === 'mp4') {
+        const video = document.createElement('video');
+        video.src = mediaSrc;
+        video.controls = true;
+        video.autoplay = true;
+        video.classList.add('media');
+        carouselMedia.appendChild(video);
+      } else {
+        const img = document.createElement('img');
+        img.src = mediaSrc;
+        img.classList.add('media');
+        carouselMedia.appendChild(img);
+      }
+    }
+
+    leftBtn.onclick = () => {
+      currentIndex = (currentIndex - 1 + mediaList.length) % mediaList.length;
+      showMedia(currentIndex);
+    };
+    rightBtn.onclick = () => {
+      currentIndex = (currentIndex + 1) % mediaList.length;
+      showMedia(currentIndex);
+    };
+
+    closeBtn.onclick = () => {
+      modal.style.display = 'none';
+      carouselMedia.innerHTML = '';
+    };
+    window.onclick = (e) => {
       if (e.target === modal) {
         modal.style.display = 'none';
-        modalVideo.pause();
+        carouselMedia.innerHTML = '';
       }
-    });
+    };
   </script>
 </body>
 </html>
-
-
