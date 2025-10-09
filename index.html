@@ -164,48 +164,28 @@
     });
 
     function openModal() {
-      modal.style.display = 'flex';
-      showMedia(currentIndex);
-    }
+  document.body.classList.add('modal-open'); // 🔹 adaugăm blur pe fundal
+  modal.style.display = 'flex';
+  setTimeout(() => modal.classList.add('show'), 10);
+  showMedia(currentIndex);
+}
 
-    function showMedia(index) {
-      const mediaSrc = mediaList[index];
-      const ext = mediaSrc.split('.').pop();
-      carouselMedia.innerHTML = '';
-      if (ext === 'mp4') {
-        const video = document.createElement('video');
-        video.src = mediaSrc;
-        video.controls = true;
-        video.autoplay = true;
-        video.classList.add('media');
-        carouselMedia.appendChild(video);
-      } else {
-        const img = document.createElement('img');
-        img.src = mediaSrc;
-        img.classList.add('media');
-        carouselMedia.appendChild(img);
-      }
-    }
+closeBtn.onclick = () => {
+  modal.classList.remove('show');
+  document.body.classList.remove('modal-open'); // 🔹 eliminăm blur-ul
+  setTimeout(() => {
+    modal.style.display = 'none';
+    carouselMedia.innerHTML = '';
+  }, 300);
+};
 
-    leftBtn.onclick = () => {
-      currentIndex = (currentIndex - 1 + mediaList.length) % mediaList.length;
-      showMedia(currentIndex);
-    };
-    rightBtn.onclick = () => {
-      currentIndex = (currentIndex + 1) % mediaList.length;
-      showMedia(currentIndex);
-    };
-
-    closeBtn.onclick = () => {
+window.onclick = (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('show');
+    document.body.classList.remove('modal-open'); // 🔹 eliminăm blur-ul
+    setTimeout(() => {
       modal.style.display = 'none';
       carouselMedia.innerHTML = '';
-    };
-    window.onclick = (e) => {
-      if (e.target === modal) {
-        modal.style.display = 'none';
-        carouselMedia.innerHTML = '';
-      }
-    };
-  </script>
-</body>
-</html>
+    }, 300);
+  }
+};
