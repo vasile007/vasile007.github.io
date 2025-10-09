@@ -334,3 +334,18 @@ body.dark footer { background: #1e1e1e; color: #aaa; }
 .nav-btn.right { right: 10px; }
 .nav-btn:hover { background: rgba(255,255,255,0.5); }
 
+/* ===== MODAL ANIMATION ===== */
+@keyframes modalFadeZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal.show .modal-content {
+  animation: modalFadeZoom 0.4s ease forwards;
+}
