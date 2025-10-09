@@ -440,15 +440,31 @@ footer {
 }
 
 .contact-btn.email {
-  background: linear-gradient(135deg, #EA4335, #D93025);
-  box-shadow: 0 4px 15px rgba(234, 67, 53, 0.4);
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #410093, #7200FF); /* violet Yahoo */
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(65, 0, 147, 0.4);
+}
+
+.contact-btn.email .icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
 }
 
 .contact-btn.email:hover {
-  background: linear-gradient(135deg, #FF5A47, #C5221F);
+  background: linear-gradient(135deg, #7200FF, #410093);
   transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(234, 67, 53, 0.6);
+  box-shadow: 0 6px 20px rgba(65, 0, 147, 0.6);
 }
+
+
 
 .contact-btn.github {
   background: linear-gradient(135deg, #24292e, #2f363d);
