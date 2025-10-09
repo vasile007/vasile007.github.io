@@ -335,15 +335,31 @@ footer {
 }
 
 .section.contact {
-  text-align: center; /* centrează tot conținutul din secțiunea Contact */
+  text-align: center; /* centrează conținutul */
 }
 
-.section.contact a {
-  color: #00c6ff;       /* opțional, pentru link-uri să iasă în evidență */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;       /* spațiu între butoane */
+  flex-wrap: wrap;    /* responsive pentru ecrane mici */
+  margin-top: 1rem;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: #00c6ff;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: background 0.3s, transform 0.2s;
 }
 
-.section.contact a:hover {
-  color: #0072ff;
+.contact-btn:hover {
+  background: #0072ff;
+  transform: translateY(-3px);
 }
