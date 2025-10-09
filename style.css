@@ -407,19 +407,19 @@ footer {
   width: 100%;
   font-size: 0.9rem;
 }
-/* === contact section ===*/
+/* === CONTACT SECTION === */
 .section.contact {
-  display: flex;            /* flex container */
-  flex-direction: column;   /* vertical stacking */
-  align-items: center;      /* centrează tot pe orizontală */
-  justify-content: center;  /* centrează vertical dacă e nevoie */
-  text-align: center;       /* centrează textul h2 */
+  display: flex;            
+  flex-direction: column;  
+  align-items: center;      
+  justify-content: center;  
+  text-align: center;       
   width: 100%;
 }
 
 .contact-container {
   display: flex;
-  justify-content: center;  /* centrează butoanele */
+  justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
   margin-top: 1rem;
@@ -429,17 +429,50 @@ footer {
 .contact-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   padding: 0.8rem 1.5rem;
-  background: #00c6ff;
   color: #fff;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
-  transition: background 0.3s, transform 0.2s;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
 }
 
-.contact-btn:hover {
-  background: #0072ff;
-  transform: translateY(-3px);
+.contact-btn .icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Contact section */
+.contact-btn.email {
+  background: linear-gradient(135deg, #EA4335, #D93025);
+  box-shadow: 0 4px 15px rgba(234, 67, 53, 0.4);
+}
+.contact-btn.email:hover {
+  background: linear-gradient(135deg, #FF5A47, #C5221F);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(234, 67, 53, 0.6);
+}
+
+/* GitHub black-gray glossy */
+.contact-btn.github {
+  background: linear-gradient(135deg, #24292e, #2f363d);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+.contact-btn.github:hover {
+  background: linear-gradient(135deg, #2f363d, #24292e);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* LinkedIn blue gradient */
+.contact-btn.linkedin {
+  background: linear-gradient(135deg, #0077B5, #00A0DC);
+  box-shadow: 0 4px 15px rgba(0, 119, 181, 0.4);
+}
+.contact-btn.linkedin:hover {
+  background: linear-gradient(135deg, #00A0DC, #0077B5);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 119, 181, 0.6);
 }
