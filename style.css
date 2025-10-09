@@ -226,11 +226,13 @@ body.dark .navbar.scrolled {
 
 .about-content {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: center;
+  flex-direction: column; /* stacked text */
+  gap: 1rem;
+  align-items: center;   /* centru orizontal */
   justify-content: center;
+  text-align: center;
 }
+
 
 .about-content .profile-pic {
   width: 250px;
