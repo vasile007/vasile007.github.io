@@ -19,114 +19,63 @@ body.dark {
 }
 
 /* ==================== NAVBAR ==================== */
-
 .navbar {
-
   position: sticky;
-
   top: 0;
-
   width: 100%;
-
-  background: #1e1e1e;
-
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-
+  background: #fff; /* fundal alb pentru light mode */
+  color: #111; /* text închis vizibil pe alb */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   z-index: 1000;
-
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
-
   padding: 1rem 2rem;
-
-  color: #fff;
-
   transition: all 0.3s ease;
-
 }
 
-
-
+body.dark .navbar {
+  background: #1e1e1e; /* fundal în dark mode */
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
 
 .navbar.scrolled {
-
   padding: 0.5rem 2rem;
-
-  background: rgba(30,30,30,0.95);
-
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-
-
+body.dark .navbar.scrolled {
+  background: rgba(30,30,30,0.95);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
 
 .navbar .logo {
-
   font-weight: 700;
-
-  font-size: 1.5rem;
-
+  font-size: 1.8rem;
 }
-
-
-
-
-.navbar .nav-links {
-
-  list-style: none;
-
-  display: flex;
-
-  gap: 1.5rem;
-
-}
-
-
-
 
 .navbar .nav-links a {
-
   text-decoration: none;
-
-  color: #fff;
-
+  color: inherit; /* ia culoarea navbar-ului (negru în light mode, alb în dark mode) */
   font-weight: 500;
-
   transition: color 0.2s ease;
-
 }
-
-
-
 
 .navbar .nav-links a:hover {
-
   color: #00c6ff;
-
 }
-
-
-
 
 .navbar .dark-toggle {
-
   background: none;
-
   border: none;
-
-  color: #fff;
-
   font-size: 1.2rem;
-
   cursor: pointer;
-
+  color: inherit;
 }
 
-C
+
 
 /* ==================== HERO ==================== */
 .hero {
