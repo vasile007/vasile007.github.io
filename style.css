@@ -321,24 +321,26 @@ body.modal-open::before {
   background: rgba(0,0,0,0.4);
   z-index: 9998;
 }
-
+/* =====footer ===*/
 
 footer {
-  text-align: center;      
-  padding: 1.5rem 2rem;    
-  background: #111;        
-  color: #fff;             
-  position: relative;      
-  bottom: 0;
+  display: flex;            
+  justify-content: center;  
+  text-align: center;
+  padding: 1.5rem 2rem;
+  background: #111;
+  color: #fff;
   width: 100%;
   font-size: 0.9rem;
 }
-
+/* === contact section ===*/
 .section.contact {
-  text-align: center;       /* centru pentru text h2 */
-  display: flex;            /* transformăm section într-un flex container */
+  display: flex;            /* flex container */
   flex-direction: column;   /* vertical stacking */
-  align-items: center;      /* centrează conținutul pe orizontală */
+  align-items: center;      /* centrează tot pe orizontală */
+  justify-content: center;  /* centrează vertical dacă e nevoie */
+  text-align: center;       /* centrează textul h2 */
+  width: 100%;
 }
 
 .contact-container {
@@ -347,6 +349,7 @@ footer {
   gap: 1.5rem;
   flex-wrap: wrap;
   margin-top: 1rem;
+  width: 100%;
 }
 
 .contact-btn {
