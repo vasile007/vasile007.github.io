@@ -19,11 +19,12 @@ body.dark {
 }
 
 /* ==================== NAVBAR ==================== */
+
 .navbar {
   position: sticky;
   top: 0;
   width: 100%;
-  background: #fff; /* fundal light mode */
+  background: #fff; /* light mode */
   color: #111;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   z-index: 1000;
@@ -61,36 +62,33 @@ body.dark .navbar.scrolled {
 .navbar .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem; /* spațiu între link-uri */
   align-items: center;
-}
-
-.navbar .nav-links li {
-  list-style: none;
 }
 
 .navbar .nav-links a {
   text-decoration: none;
-  color: inherit; /* ia culoarea navbar-ului */
+  color: inherit; /* preia culoarea navbar-ului */
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, background 0.2s ease;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
 }
 
 .navbar .nav-links a:hover {
-  color: #00c6ff;
+  background: #00c6ff;
+  color: #fff;
 }
 
 /* DARK MODE TOGGLE */
 .navbar .dark-toggle {
-  margin-left: 1rem;
+  margin-left: 1.5rem;
   background: none;
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
   color: inherit;
 }
-
-
 
 /* ==================== HERO ==================== */
 .hero {
