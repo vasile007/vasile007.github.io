@@ -439,30 +439,37 @@ footer {
   height: 24px;
 }
 
-.contact-btn.email {
-  display: flex;
+.contact-btn {
+  display: inline-flex;
   align-items: center;
-  padding: 10px 20px;
-  background: linear-gradient(135deg, #410093, #7200FF); /* violet Yahoo */
-  color: white;
+  gap: 0.6rem;
+  padding: 0.8rem 1.5rem;
+  color: #fff;
   font-weight: 600;
   border-radius: 10px;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(65, 0, 147, 0.4);
+  font-size: 1.1rem;
 }
 
-.contact-btn.email .icon {
+.contact-btn .icon {
   width: 24px;
   height: 24px;
   margin-right: 8px;
 }
 
-.contact-btn.email:hover {
-  background: linear-gradient(135deg, #7200FF, #410093);
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(65, 0, 147, 0.6);
+/* Yahoo */
+.contact-btn.email {
+  background-color: #430297; /* Yahoo purple */
+  box-shadow: 0 4px 15px rgba(67,2,151,0.4);
 }
+
+.contact-btn.email:hover {
+  background-color: #5c00d6;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(67,2,151,0.6);
+}
+
 
 
 
