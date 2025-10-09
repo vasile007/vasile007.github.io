@@ -29,22 +29,65 @@ body.dark {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   z-index: 1000;
   transition: all 0.3s ease;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0.75rem 2rem;
   display: flex;
-  justify-content: space-between; /* logo stânga, link-uri + buton dreapta */
+  justify-content: space-between; /* logo stânga, link-uri dreapta */
   align-items: center;
+}
+
+/* Logo */
+.logo {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+/* Link-uri */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem; /* spațiu între link-uri */
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-links a:hover {
+  background: #00c6ff;
+  color: #fff;
+}
+
+/* Dark mode toggle */
+.dark-toggle {
+  margin-left: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* Scroll effect */
+.navbar.scrolled {
+  padding: 0.5rem 2rem;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 body.dark .navbar {
   background: #1e1e1e;
   color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-}
-
-.navbar.scrolled {
-  padding: 0.5rem 2rem;
-  background: rgba(255,255,255,0.95);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 body.dark .navbar.scrolled {
@@ -52,43 +95,6 @@ body.dark .navbar.scrolled {
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-/* LOGO */
-.navbar .logo {
-  font-weight: 700;
-  font-size: 1.8rem;
-}
-
-/* LINK-URI */
-.navbar .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2rem; /* spațiu între link-uri */
-  align-items: center;
-}
-
-.navbar .nav-links a {
-  text-decoration: none;
-  color: inherit; /* preia culoarea navbar-ului */
-  font-weight: 500;
-  transition: color 0.2s ease, background 0.2s ease;
-  padding: 0.3rem 0.6rem;
-  border-radius: 5px;
-}
-
-.navbar .nav-links a:hover {
-  background: #00c6ff;
-  color: #fff;
-}
-
-/* DARK MODE TOGGLE */
-.navbar .dark-toggle {
-  margin-left: 1.5rem;
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: inherit;
-}
 
 /* ==================== HERO ==================== */
 .hero {
