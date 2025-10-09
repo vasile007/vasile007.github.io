@@ -23,44 +23,46 @@ body.dark {
   position: sticky;
   top: 0;
   width: 100%;
-  background: #fff; /* fundal alb pentru light mode */
-  color: #111; /* text închis vizibil pe alb */
+  background: #fff; /* light mode */
+  color: #111;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
   transition: all 0.3s ease;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center; /* centru pentru conținut */
 }
 
 body.dark .navbar {
-  background: #1e1e1e; /* fundal în dark mode */
+  background: #1e1e1e;
   color: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
-.navbar.scrolled {
-  padding: 0.5rem 2rem;
-  background: rgba(255,255,255,0.95);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-body.dark .navbar.scrolled {
-  background: rgba(30,30,30,0.95);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+.nav-container {
+  display: flex;
+  flex-direction: column; /* logo deasupra link-uri */
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .navbar .logo {
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 2rem;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .navbar .nav-links a {
   text-decoration: none;
-  color: inherit; /* ia culoarea navbar-ului (negru în light mode, alb în dark mode) */
+  color: inherit;
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: color 0.2s;
 }
 
 .navbar .nav-links a:hover {
@@ -68,11 +70,12 @@ body.dark .navbar.scrolled {
 }
 
 .navbar .dark-toggle {
+  margin-top: 0.5rem;
   background: none;
   border: none;
+  color: inherit;
   font-size: 1.2rem;
   cursor: pointer;
-  color: inherit;
 }
 
 
