@@ -335,14 +335,17 @@ footer {
 }
 
 .section.contact {
-  text-align: center; /* centrează conținutul */
+  text-align: center;       /* centru pentru text h2 */
+  display: flex;            /* transformăm section într-un flex container */
+  flex-direction: column;   /* vertical stacking */
+  align-items: center;      /* centrează conținutul pe orizontală */
 }
 
 .contact-container {
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;       /* spațiu între butoane */
-  flex-wrap: wrap;    /* responsive pentru ecrane mici */
+  justify-content: center;  /* centrează butoanele */
+  gap: 1.5rem;
+  flex-wrap: wrap;
   margin-top: 1rem;
 }
 
