@@ -349,3 +349,24 @@ body.dark footer { background: #1e1e1e; color: #aaa; }
 .modal.show .modal-content {
   animation: modalFadeZoom 0.4s ease forwards;
 }
+/* ===== BACKGROUND BLUR WHEN MODAL OPENS ===== */
+body.modal-open {
+  overflow: hidden; /* prevenim scroll-ul */
+}
+
+body.modal-open::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 9998;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+body:not(.modal-open)::before {
+  opacity: 0;
+  pointer-events: none;
+}
