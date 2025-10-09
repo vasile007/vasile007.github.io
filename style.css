@@ -444,35 +444,3 @@ footer {
   height: 24px;
 }
 
-/* Contact section */
-.contact-btn.email {
-  background: linear-gradient(135deg, #EA4335, #D93025);
-  box-shadow: 0 4px 15px rgba(234, 67, 53, 0.4);
-}
-.contact-btn.email:hover {
-  background: linear-gradient(135deg, #FF5A47, #C5221F);
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(234, 67, 53, 0.6);
-}
-
-/* GitHub black-gray glossy */
-.contact-btn.github {
-  background: linear-gradient(135deg, #24292e, #2f363d);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-}
-.contact-btn.github:hover {
-  background: linear-gradient(135deg, #2f363d, #24292e);
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
-}
-
-/* LinkedIn blue gradient */
-.contact-btn.linkedin {
-  background: linear-gradient(135deg, #0077B5, #00A0DC);
-  box-shadow: 0 4px 15px rgba(0, 119, 181, 0.4);
-}
-.contact-btn.linkedin:hover {
-  background: linear-gradient(135deg, #00A0DC, #0077B5);
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0, 119, 181, 0.6);
-}
