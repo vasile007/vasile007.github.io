@@ -41,10 +41,15 @@ body.dark {
 }
 
 /* Logo */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 .logo {
-  font-weight: 700;
-  font-size: 1.8rem;
+  font-family: 'Pacifico', cursive; /* font de mână */
+  font-size: 2.8rem; /* mai mare */
+  font-weight: normal;
+  color: #00c6ff;
 }
+
 
 /* Link-uri */
 .nav-links {
