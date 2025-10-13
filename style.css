@@ -494,4 +494,27 @@ footer {
   transform: translateY(-4px);
   box-shadow: 0 6px 20px rgba(0, 119, 181, 0.6);
 }
+/* ==================== PROJECT CARD BACKGROUND ==================== */
+.project-card {
+  position: relative;       
+  color: #fff;              
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card .card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.5); /* overlay semi-transparent */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.project-card h3,
+.project-card p {
+  margin: 0.3rem 0;
+}
 
